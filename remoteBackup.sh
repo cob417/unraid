@@ -61,10 +61,10 @@ zip -rq $backup_file $usb_path $libvirt_file $appdata_backup_path/$latest_backup
 echo "Copying today's backup to the remote backup server..."
 if cp $backup_file $remote_path; then
 	echo "Backup Success: Unraid backup copy successful."
-	/usr/local/emhttp/webGui/scripts/notify -i normal -s "Remote Backup Success" =d "Successful backup from $start_time ."
+	/usr/local/emhttp/webGui/scripts/notify -i normal -s "Remote Backup Success" -d "Successful backup from $start_time ."
 else
 	echo "Backup Failure: Unraid backup copy did not complete."	
-	/usr/local/emhttp/webGui/scripts/notify -i warning -s "Remote Backup Failed" =d "Failed backup from $start_time ."
+	/usr/local/emhttp/webGui/scripts/notify -i warning -s "Remote Backup Failed" -d "Failed backup from $start_time ."
 fi    
 	
 echo "Purging backup files that are over 7 days old... "
