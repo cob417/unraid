@@ -1,9 +1,9 @@
 !/bin/bash
 
 #
-# UNRAID Remote Backup v1.1
-# By: Edge
-#
+# UNRAID Remote Backup v1.2
+# By: Edge, modified by Cob
+# 
 ###################################################################################
 #
 # Path and file settings -- change accordingly!
@@ -69,6 +69,7 @@ fi
 	
 echo "Purging backup files that are over 7 days old... "
 find $backup_path -type f -name "*.zip" -mtime +7 -delete
+find $remote_path -type f -name "*.zip" -mtime +7 -delete
 
 echo ""
 end_time=$(date)
