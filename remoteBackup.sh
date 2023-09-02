@@ -56,7 +56,7 @@ echo ""
 
 # Zip the USB files, LIBVIRT image and APPDATA folder
 echo "Zipping UNRAID USB files, LIBVIRT image and the latest APPDATA backup..."
-zip -rq $backup_file $usb_path $libvirt_file $appdata_backup_path/$latest_backup/CA_backup.tar.gz
+zip -rq $backup_file $usb_path $libvirt_file $appdata_backup_path/$latest_backup/
 
 echo "Copying today's backup to the remote backup server..."
 if cp $backup_file $remote_path; then
